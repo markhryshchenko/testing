@@ -17,7 +17,8 @@ class getIpController {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
-      let ip_ = ip_adress.replaceAll(".", "");
+     console.log(ip_adress)
+      //let ip_ = ip_adress.replaceAll(".", "");
       let index = results.findIndex(
         (el) => ip_ >= Number(el.from) && ip_ <= Number(el.to)
       );
