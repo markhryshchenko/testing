@@ -1,7 +1,7 @@
 const csv = require("csv-parser");
 const fs = require("fs");
 const results = [];
-//const ip = '189.31.200';
+//const ip = '167.78.240';
 
 fs.createReadStream("data.csv")
   .pipe(csv())
@@ -17,13 +17,15 @@ class getIpController {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
-     //console.log()
-      let ip_ = ip_adress.replaceAll(/./g, "");
+       
+        let ip_ = ip_adress.replace(/\./g, "");
+      
+        res.status(200).json(ip_);
       let index = results.findIndex(
         (el) => ip_ >= Number(el.from) && ip_ <= Number(el.to)
       );
      
-      //res.status(200).json(results[index]);
+      console.log(results[index])
       res.status(200).json(`your IP: ${results[index]}`);
     } catch (e) {
       console.log(e);
