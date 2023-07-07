@@ -18,13 +18,13 @@ class getIpController {
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
      //console.log()
-      //let ip_ = ip_adress.replaceAll(".", "");
-      /* let index = results.findIndex(
+      let ip_ = ip_adress.replaceAll(/./g, "");
+      let index = results.findIndex(
         (el) => ip_ >= Number(el.from) && ip_ <= Number(el.to)
-      ); */
+      );
      
       //res.status(200).json(results[index]);
-      res.status(200).json(`your IP: ${ip_adress}`);
+      res.status(200).json(`your IP: ${results[index]}`);
     } catch (e) {
       console.log(e);
     }
