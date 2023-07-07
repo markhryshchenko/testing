@@ -26,7 +26,7 @@ class getIpController {
       );
 
       console.log(results[index]);
-      res.status(200).json(`your IP: ${results[index]}`);
+      res.status(200).json(results[index]);
     } catch (e) {
       console.log(e);
     }
