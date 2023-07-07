@@ -25,8 +25,8 @@ class getIpController {
         (el) => ip_ >= Number(el.from) && ip_ <= Number(el.to)
       );
 
-      console.log(results[index]);
-      res.status(200).json(results[index]);
+      //console.log(results[index]);
+      res.status(200).json(results);
     } catch (e) {
       console.log(e);
     }
